@@ -13,12 +13,18 @@ const personalMovieDB = {
 };
 
 //3
-const oneSeenMovie1 = prompt('Один из последний посмотренных фильмов?', '');
-const rateMovie1 = prompt('На сколько оцените его?', '');
-const oneSeenMovie2 = prompt('Один из последний посмотренных фильмов?', '');
-const rateMovie2 = prompt('На сколько оцените его?', '');
-personalMovieDB.movies[oneSeenMovie1] = rateMovie1;
-personalMovieDB.movies[oneSeenMovie2] = rateMovie2;
+let nameSeenMovie;
+let rateMovie;
+let i = 1;
+
+do {
+    nameSeenMovie = prompt('Один из последний посмотренных фильмов?', ''),
+    rateMovie = prompt('На сколько оцените его?', ''),
+    personalMovieDB.movies[i] = {
+        [nameSeenMovie]: rateMovie
+    }
+    i++;
+}
+while (i < 3);3
 
 console.log(personalMovieDB);
-

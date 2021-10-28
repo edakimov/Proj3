@@ -20,14 +20,6 @@ const personalMovieDB = {
     privat: false
 };
 
-function showMyDB() {
-    if (personalMovieDB.privat == false) {
-        console.log(personalMovieDB);
-    }
-}
-
-showMyDB();
-
 let nameSeenMovie;
 let rateMovie;
 
@@ -65,6 +57,25 @@ function detectPersonalLevel() {
 detectPersonalLevel();
 
 console.log(personalMovieDB);
+
+function showMyDB(hidden) {
+    if (!hidden) {
+        console.log(personalMovieDB);
+    }
+}
+
+showMyDB(personalMovieDB.private);
+
+
+let favoriteGenre;
+
+function writeYourGenres() {
+    for (let i = 1; i <= 3; i++) {
+        personalMovieDB.genres[i - 1] = favoriteGenre = prompt(`Ваш любимый жанр по номером ${i}`);
+        }
+    }
+
+writeYourGenres();
 
 // let i = 1;
 

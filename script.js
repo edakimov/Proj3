@@ -20,6 +20,14 @@ const personalMovieDB = {
     privat: false
 };
 
+function showMyDB() {
+    if (personalMovieDB.privat == false) {
+        console.log(personalMovieDB);
+    }
+}
+
+showMyDB();
+
 let nameSeenMovie;
 let rateMovie;
 
@@ -54,7 +62,7 @@ function detectPersonalLevel() {
     
 }
 
-rememberMyFields();
+detectPersonalLevel();
 
 console.log(personalMovieDB);
 
